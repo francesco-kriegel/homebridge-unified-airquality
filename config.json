@@ -1,0 +1,91 @@
+{
+  "accessory": "unified-airquality",
+  "name": "Foo",
+  "serial_number": "1234",
+  "update_interval_seconds": 300,
+  "update_history_seconds": 600,
+  "history_filename": "Foo.csv",
+  "sources": [
+    {
+      "id": "A",
+      "provider": "luftdaten.info",
+      "sensor": "12345",
+      "keys": [
+        "temperature",
+        "humidity",
+        "pressure"
+      ]
+    },
+    {
+      "id": "B",
+      "provider": "luftdaten.info",
+      "sensor": "23456",
+      "keys": [
+        "pm2.5",
+        "pm10"
+      ]
+    },
+    {
+      "id": "C",
+      "provider": "waqi.info",
+      "token": "0",
+      "city": "@34567",
+      "keys": [
+        "temperature",
+        "pressure",
+        "no2",
+        "o3",
+        "pm10",
+        "so2"
+      ]
+    },
+    {
+      "id": "D",
+      "provider": "bme280",
+      "i2cBusNo": 0,
+      "i2cAddress": "0x76",
+      "keys": [
+        "temperature",
+        "humidity",
+        "pressure"
+      ],
+      "offsets": {
+        "temperature": -1,
+        "humidity": 7
+      }
+    }
+  ],
+  "services": {
+    "temperature": {
+      "name": "Foo",
+      "temperature": {
+        "sources": [
+          "A", "C"
+        ],
+        "aggregate": "average"
+      },
+      "pressure": "A"
+    },
+    "humidity": {
+      "name": "Foo",
+      "humidity": "A"
+    },
+    "airquality": {
+      "name": "Foo",
+      "aqi": "caqi",
+      "co": null,
+      "co2": null,
+      "no2": "C",
+      "o3": "C",
+      "pm2.5": "B",
+      "pm10": {
+        "sources": [
+          "B", "C"
+        ],
+        "aggregate": "maximum"
+      },
+      "so2": "C",
+      "voc": null
+    }
+  }
+}

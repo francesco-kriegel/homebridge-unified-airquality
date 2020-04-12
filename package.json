@@ -1,0 +1,53 @@
+{
+  "name": "homebridge-unified-airquality",
+  "version": "0.0.1",
+  "description": "TBA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francesco-kriegel/homebridge-unified-airquality.git"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "homebridge",
+    "nodemcu",
+    "airrohr",
+    "feinstaub",
+    "homekit",
+    "aqicn",
+    "air quality",
+    "waqi",
+    "pollution",
+    "bme280",
+    "temperature",
+    "humidity",
+    "pressure",
+    "sensor"
+  ],
+  "engines": {
+    "node": ">=6.0.0",
+    "homebridge": ">=0.2.0"
+  },
+  "dependencies": {
+    "moment": "^2.18.1",
+    "fakegato-history": "^0.5.2",
+    "lower-case": "^1.1.4",
+    "request": "^2.81.0",
+    "striptags": "^3.0.1",
+    "bme280-sensor": "^0.1.7",
+    "debug": "^2.2.0",
+    "mcuiot-logger": "^0.0.7"
+  },
+  "devDependencies": {
+    "chai": "*"
+  },
+  "author": "Francesco Kriegel",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/francesco-kriegel/homebridge-unified-airquality/issues"
+  },
+  "homepage": "https://github.com/francesco-kriegel/homebridge-unified-airquality#readme"
+}
